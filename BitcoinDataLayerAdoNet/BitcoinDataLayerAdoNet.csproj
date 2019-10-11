@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C597E481-962B-4D66-AE8A-409E11519344}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BitcoinDataLayerAdoNet</RootNamespace>
+    <AssemblyName>BitcoinDataLayerAdoNet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BitcoinDataLayerAdoNet.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BitcoinBlockchain, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BitcoinBlockchain.1.2.5.0\lib\net45\BitcoinBlockchain.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitcoinDataLayer.cs" />
+    <Compile Include="BitcoinDataLayerValidation.cs" />
+    <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="DatabaseManager.cs" />
+    <Compile Include="DataSets\BitcoinTransactionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BitcoinTransactionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\BlockDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BlockDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\IndexInfoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IndexInfoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\SummaryBlockDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SummaryBlockDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\TransactionInputDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionInputDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\TransactionInputSourceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionInputSourceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\TransactionOutputDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionOutputDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\ValidationBlockchainDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationBlockchainDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\ValidationBlockchainFilesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationBlockchainFilesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\ValidationBlockDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationBlockDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\ValidationTransactionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationTransactionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\ValidationTransactionInputDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationTransactionInputDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\ValidationTransactionOutputDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationTransactionOutputDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BlockchainFile.cs" />
+    <Compile Include="Data\Block.cs" />
+    <Compile Include="Data\BitcoinTransaction.cs" />
+    <Compile Include="Data\TransactionInput.cs" />
+    <Compile Include="Data\TransactionInputSource.cs" />
+    <Compile Include="Data\TransactionOutput.cs" />
+    <Compile Include="GlobalSuppressions.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ValidationDataSetInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSets\BitcoinTransactionDataSet.xsc">
+      <DependentUpon>BitcoinTransactionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\BitcoinTransactionDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BitcoinTransactionDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\BitcoinTransactionDataSet.xss">
+      <DependentUpon>BitcoinTransactionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\BlockDataSet.xsc">
+      <DependentUpon>BlockDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\BlockDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BlockDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\BlockDataSet.xss">
+      <DependentUpon>BlockDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\IndexInfoDataSet.xsc">
+      <DependentUpon>IndexInfoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\IndexInfoDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IndexInfoDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\IndexInfoDataSet.xss">
+      <DependentUpon>IndexInfoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\SummaryBlockDataSet.xsc">
+      <DependentUpon>SummaryBlockDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\SummaryBlockDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SummaryBlockDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\SummaryBlockDataSet.xss">
+      <DependentUpon>SummaryBlockDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\TransactionInputDataSet.xsc">
+      <DependentUpon>TransactionInputDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\TransactionInputDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransactionInputDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\TransactionInputDataSet.xss">
+      <DependentUpon>TransactionInputDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\TransactionInputSourceDataSet.xsc">
+      <DependentUpon>TransactionInputSourceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\TransactionInputSourceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransactionInputSourceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\TransactionInputSourceDataSet.xss">
+      <DependentUpon>TransactionInputSourceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\TransactionOutputDataSet.xsc">
+      <DependentUpon>TransactionOutputDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\TransactionOutputDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransactionOutputDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\TransactionOutputDataSet.xss">
+      <DependentUpon>TransactionOutputDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ValidationBlockchainDataSet.xsc">
+      <DependentUpon>ValidationBlockchainDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ValidationBlockchainDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ValidationBlockchainDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\ValidationBlockchainDataSet.xss">
+      <DependentUpon>ValidationBlockchainDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ValidationBlockchainFilesDataSet.xsc">
+      <DependentUpon>ValidationBlockchainFilesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ValidationBlockchainFilesDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ValidationBlockchainFilesDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\ValidationBlockchainFilesDataSet.xss">
+      <DependentUpon>ValidationBlockchainFilesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ValidationBlockDataSet.xsc">
+      <DependentUpon>ValidationBlockDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ValidationBlockDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ValidationBlockDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\ValidationBlockDataSet.xss">
+      <DependentUpon>ValidationBlockDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ValidationTransactionDataSet.xsc">
+      <DependentUpon>ValidationTransactionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ValidationTransactionDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ValidationTransactionDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\ValidationTransactionDataSet.xss">
+      <DependentUpon>ValidationTransactionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ValidationTransactionInputDataSet.xsc">
+      <DependentUpon>ValidationTransactionInputDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ValidationTransactionInputDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ValidationTransactionInputDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\ValidationTransactionInputDataSet.xss">
+      <DependentUpon>ValidationTransactionInputDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ValidationTransactionOutputDataSet.xsc">
+      <DependentUpon>ValidationTransactionOutputDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ValidationTransactionOutputDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ValidationTransactionOutputDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\ValidationTransactionOutputDataSet.xss">
+      <DependentUpon>ValidationTransactionOutputDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+    <Content Include="Schema\Tables.sql" />
+    <Content Include="Schema\SeedData.sql" />
+    <Content Include="Schema\Views.sql" />
+    <Content Include="SQLScripts\DataSetViews.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdoNetHelpers\AdoNetHelpers.csproj">
+      <Project>{917927c4-3159-455f-82e3-18d0578bfa3a}</Project>
+      <Name>AdoNetHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZeroHelpers\ZeroHelpers.csproj">
+      <Project>{840f367f-12cf-4ec5-9d9d-bcf9ed9bb4b1}</Project>
+      <Name>ZeroHelpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

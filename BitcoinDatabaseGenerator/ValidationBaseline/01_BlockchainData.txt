@@ -1,0 +1,36 @@
+Validation dataset: 01_BlockchainData
+
+SQL statement:
+
+                SELECT 
+                    COUNT(1) AS BlockCount,
+                    SUM(TransactionCount) AS TransactionCount,
+                    SUM(TransactionInputCount) AS TransactionInputCount,
+                    SUM(TotalInputBtc) AS TotalInputBtc,
+                    SUM(TransactionOutputCount) AS TransactionOutputCount,
+                    SUM(TotalOutputBtc) AS TotalOutputBtc,
+                    SUM(TransactionFeeBtc) AS TransactionFeeBtc,
+                    SUM(TotalUnspentOutputBtc) AS TotalUnspentOutputBtc
+                FROM View_BlockAggregated
+                WHERE BlockchainFileId <= @MaxBlockchainFileId
+
+Parameter @MaxBlockchainFileId. Value: 340.
+
+Columns:
+BlockCount
+TransactionCount
+TransactionInputCount
+TotalInputBtc
+TransactionOutputCount
+TotalOutputBtc
+TransactionFeeBtc
+
+Row 0
+375540
+84869269
+222007234
+2224478181.73720006
+255608213
+2239116671.53951188
+35086.96594246
+
